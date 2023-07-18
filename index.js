@@ -1,8 +1,11 @@
 // JS for Menu Bar
 
+import { TypingTest } from "./components/TypingTest.js";
+
 let expandElem = document.querySelector('#expand');
+let typingTestBtn = document.querySelector('#typingTestBtn');
 let startTypingBtn = document.querySelector('#startTypingBtn');
-let typingTest = document.querySelector('#typingTest');
+let basicTypingTest = document.querySelector('#basicTypingTest');
 let coloredText = document.querySelector('#coloredText');
 // console.log(coloredText);
 let uncoloredText = document.querySelector('#uncoloredText');
@@ -12,6 +15,9 @@ let menusAndAuth = document.querySelector('#menus-and-auth');
 let resultPage = document.querySelector('#resultPage');
 let wpm = document.querySelector('#wpm');
 let lead = document.querySelector('#lead');
+let typingTestElem = document.querySelector('#typingTest');
+let typedElem = document.getElementById('typed');
+let untypedElem = document.getElementById('untyped');
 
 let expanded = false;
 const expandOrCollapse = ()=> {
@@ -55,7 +61,7 @@ function checkText(event) {
     if(typedText == demoText) {
         let elapsedTime = new Date().getTime() - startTime;
         elapsedTime /= 1000;
-        typingTest.style.display = 'none';
+        basicTypingTest.style.display = 'none';
         resultPage.style.display = 'flex';
         let result = Math.floor(60 * (11/elapsedTime));
         console.log(result);
@@ -66,10 +72,25 @@ function checkText(event) {
 }
 
 startTypingBtn.addEventListener('click', ()=> {
-    typingTest.style.display = 'flex';
+    basicTypingTest.style.display = 'flex';
     landingPage.style.display = 'none';
     inputBox.focus();
     // inputBox.style.display = 'none';
 })
 expandElem.addEventListener('click', expandOrCollapse)
 inputBox.addEventListener('keyup', checkText)
+
+typingTestBtn.addEventListener('click', ()=> {
+    landingPage.style.display = 'none';
+    typingTestElem.style.display = 'flex';
+    typingTestElem.append(TypingTest());
+    document.querySelector('#typed+input').focus();
+
+    document.querySelector('#typed+input').addEventListener('keyup', typingTest);
+});
+
+// Typing Test
+function typingTest(event) {
+    console.log(event.key)
+
+}

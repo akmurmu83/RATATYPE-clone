@@ -135,7 +135,7 @@ body{
 }
 
 /* Typing Test */
-#typingTest{
+#basicTypingTest{
     width: 100%;
     display: none;
 }
@@ -305,12 +305,30 @@ body{
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
-  }
-  
-  #cursor {
-    display: inline-block;
-    animation: blink 1s infinite;
-  }
+}
+
+#cursor {
+display: inline-block;
+animation: blink 1s infinite;
+}
+
+#typingTest{
+    background-color: #fff;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 50px;
+
+    display: none;
+}
+
+#untyped {
+    color: green;
+}
+
+/* Media Query */
 
 @media screen and (max-width: 1020px) {
     

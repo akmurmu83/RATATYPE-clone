@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <!--  -->
-    </div>
-
     <!-- Whole Raw code -->
     <div id="menuBar">
         <div id="logo">
@@ -22,7 +18,7 @@
         <div id="menus-and-auth">
             <div id="menus">
                     <p>TYPING TUTOR</p>
-                    <p>TYPING TEST</p>
+                    <p id="typingTestBtn">TYPING TEST</p>
                     <p>LEARN</p>
                     <p>COURSE</p>
                 </div>
@@ -52,7 +48,7 @@
         </div>
         
         <!-- Typing Test -->
-        <div id="typingTest">
+        <div id="basicTypingTest">
             
             <div id="display">
                 <p id="demoText"><span id="coloredText"></span><span id="cursor">|</span><span id="uncoloredText">type me to find out how many words you can type</span></p>
@@ -74,6 +70,11 @@
                 <p>You type faster than <span id="lead">50% of users</span>, but you can do better! Ratatype's lessons can help you improve your typing speed.</p>
                 <button class="button">IMPROVE TYPING SPEED</button>
             </div>
+        </div>
+
+        <!-- Typing Test -->
+        <div id="typingTest">
+
         </div>
 
     </div>
@@ -101,4 +102,4 @@
 </body>
 </html>
 
-<script src="index.js"></script>
+<script type="module" src="index.js"></script>
